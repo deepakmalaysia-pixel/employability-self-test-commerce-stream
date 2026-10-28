@@ -1,11 +1,11 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<title>Employability Self-Test procedure to match the original upskilling document prepared by AASHA INFINITE FOUNDATION for commerce stream students</title>
+<title>Employability Self-Test</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500..800&display=swap">
 <style>
-/* Layout: one-column answer-sheet app. Boldness sits in one place: OMR-style answer bubbles (A B C D) like bank and entrance exam sheets. */
+/* Layout: one-column course path. Learn a module, take its test, score 100% to unlock the next. Boldness sits in the OMR-style answer bubbles. */
 :root{
   --bg:#F4F7FB;
   --surface:#FFFFFF;
@@ -37,53 +37,93 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box}
-body
-  {
+body{
   background:var(--bg);color:var(--fg);
-  font:17px/1.5 var(--font-body);
-  padding-block:20px 48px;
+  font:17px/1.55 var(--font-body);
+  padding-block:20px 56px;
   padding-left:max(16px,env(safe-area-inset-left,0px));
   padding-right:max(16px,env(safe-area-inset-right,0px));
 }
 .wrap{max-width:660px;margin:0 auto}
 button{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+p{margin:0 0 12px}
 
 .eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:0 0 8px}
-h1{font-family:var(--font-display);font-weight:800;font-size:2.1rem;line-height:1.08;margin:0 0 10px;text-wrap:balance}
-.lead{color:var(--muted);margin:0 0 22px;max-width:54ch}
-.sec{font-family:var(--font-display);font-size:1.15rem;font-weight:700;margin:28px 0 12px}
+h1{font-family:var(--font-display);font-weight:800;font-size:2.1rem;line-height:1.1;margin:0 0 10px;text-wrap:balance}
+.lead{color:var(--muted);margin:0 0 20px;max-width:56ch}
+.sec{font-family:var(--font-display);font-size:1.2rem;font-weight:700;margin:30px 0 10px;text-wrap:balance}
 
-.mock{
-  width:100%;text-align:left;cursor:pointer;border:0;border-radius:14px;
-  background:var(--accent);color:var(--on);padding:18px;
-  display:flex;flex-direction:column;gap:4px;
-}
-.mock .t{font-family:var(--font-display);font-weight:800;font-size:1.35rem}
-.mock .b{opacity:.95}
-.mock .meta{font-size:.9rem;font-weight:700;margin-top:6px}
-
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-.card{
-  text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--line);
-  border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:4px;min-width:0;
-}
-.card:hover{border-color:var(--accent)}
-.card .no{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--accent)}
-.card .t{font-family:var(--font-display);font-weight:700;font-size:1.1rem;line-height:1.25}
-.card .b{color:var(--muted);font-size:.95rem}
-.card .meta{margin-top:auto;padding-top:8px;font-size:.88rem;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
-
-.foot{margin-top:32px;font-size:.85rem;color:var(--muted);max-width:60ch}
-
-.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.link{background:none;border:0;color:var(--accent);font-weight:700;cursor:pointer;min-height:44px;padding:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.link{background:none;border:0;color:var(--accent);font-weight:700;cursor:pointer;min-height:44px;padding:0;text-align:left}
 .count{color:var(--muted);font-size:.92rem;font-variant-numeric:tabular-nums}
 .bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
 .bar i{display:block;height:100%;background:var(--accent);transition:width .3s}
+
+.primary,.secondary{
+  width:100%;min-height:52px;border-radius:12px;font-weight:700;cursor:pointer;padding:10px 18px;
+  font-size:1rem;
+}
+.primary{background:var(--accent);color:var(--on);border:0}
+.primary:disabled{background:var(--line);color:var(--muted);cursor:not-allowed}
+.secondary{background:var(--surface);border:1.5px solid var(--line)}
+.secondary:disabled{color:var(--muted);cursor:not-allowed;border-style:dashed}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.actions>button{flex:1 1 200px}
+
+/* home */
+.how{background:var(--accent-soft);border-radius:12px;padding:14px 16px;margin:0 0 20px}
+.how ol{margin:6px 0 0;padding-left:1.2em}
+.how li{margin:2px 0}
+.prog{display:flex;justify-content:space-between;gap:12px;margin:0 0 8px;font-weight:700;font-variant-numeric:tabular-nums}
+.path{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.mod{
+  width:100%;text-align:left;cursor:pointer;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;
+}
+.mod:hover:not(:disabled){border-color:var(--accent)}
+.mod:disabled{cursor:not-allowed;opacity:.65}
+.mod .n{
+  width:40px;height:40px;border-radius:50%;border:2px solid var(--accent);color:var(--accent);
+  display:grid;place-items:center;font-family:var(--font-display);font-weight:800;
+}
+.mod.done .n{background:var(--good);border-color:var(--good);color:var(--on)}
+.mod .t{font-family:var(--font-display);font-weight:700;line-height:1.25;display:block}
+.mod .w{font-size:.88rem;color:var(--muted);display:block}
+.pill{font-size:.78rem;font-weight:700;border-radius:999px;padding:4px 10px;border:1.5px solid var(--line);color:var(--muted);white-space:nowrap}
+.pill.done{background:var(--good-soft);border-color:var(--good);color:var(--good)}
+.pill.open{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.foot{margin-top:28px;font-size:.88rem;color:var(--muted);max-width:60ch}
+.reset{margin-top:6px}
+.confirm{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
+.confirm button{min-height:44px;border-radius:10px;padding:0 16px;font-weight:700;cursor:pointer;background:var(--surface);border:1.5px solid var(--line)}
+.confirm .danger{border-color:var(--bad);color:var(--bad)}
+
+/* lesson */
+.steps{display:flex;gap:8px;margin:16px 0 18px;font-size:.85rem;font-weight:700}
+.steps span{padding:4px 12px;border-radius:999px;border:1.5px solid var(--line);color:var(--muted)}
+.steps .on{background:var(--accent);border-color:var(--accent);color:var(--on)}
+.banner{background:var(--bad-soft);border:1px solid var(--bad);border-radius:12px;padding:12px 14px;margin:0 0 16px}
+.goal{font-size:1.05rem;margin-bottom:6px}
+.lesson ul{margin:0 0 12px;padding-left:1.2em}
+.lesson li{margin:4px 0}
+.terms{display:grid;gap:8px;margin:0 0 12px}
+.term{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.term b{font-family:var(--font-display);display:block}
+.ex{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:10px 14px;margin:0 0 12px}
+.ex .lab{display:block;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted);margin-bottom:2px}
+.tblbox{overflow-x:auto;margin:0 0 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:360px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line);font-size:.95rem}
+th{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.recap{background:var(--accent-soft);border-radius:12px;padding:14px 16px;margin:28px 0 18px}
+.recap h2{font-family:var(--font-display);font-size:1.1rem;margin:0 0 6px}
+.recap ul{margin:0;padding-left:1.2em}
+
+/* test */
 .kicker{margin:20px 0 6px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--muted)}
 .q{font-family:var(--font-display);font-weight:600;font-size:1.35rem;line-height:1.3;margin:0 0 18px}
-
 .opts{display:flex;flex-direction:column;gap:10px}
 .opt{
   width:100%;display:grid;grid-template-columns:auto 1fr;align-items:center;gap:14px;text-align:left;
@@ -96,229 +136,245 @@ h1{font-family:var(--font-display);font-weight:800;font-size:2.1rem;line-height:
   display:grid;place-items:center;font-weight:700;font-size:.9rem;
 }
 .txt{min-width:0;overflow-wrap:anywhere}
-.opt.sel{border-color:var(--accent);background:var(--accent-soft)}
-.opt.sel .bub{background:var(--accent);border-color:var(--accent);color:var(--on)}
 .opt.right{border-color:var(--good);background:var(--good-soft)}
 .opt.right .bub{background:var(--good);border-color:var(--good);color:var(--on)}
 .opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
 .opt.wrong .bub{background:var(--bad);border-color:var(--bad);color:var(--on)}
 .opt:disabled{cursor:default;color:var(--fg)}
 .opt:disabled:not(.right):not(.wrong){opacity:.7}
-
 .fb{margin-top:16px;padding:14px 16px;border-radius:12px;font-size:.98rem}
 .fb.good{background:var(--good-soft);border:1px solid var(--good)}
 .fb.bad{background:var(--bad-soft);border:1px solid var(--bad)}
 .nav{margin-top:18px}
-.primary,.secondary{
-  width:100%;min-height:52px;border-radius:12px;font-weight:700;cursor:pointer;padding:0 18px;
-}
-.primary{background:var(--accent);color:var(--on);border:0}
-.primary:disabled{background:var(--line);color:var(--muted);cursor:not-allowed}
-.secondary{background:var(--surface);border:1.5px solid var(--line)}
-.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.actions>button{flex:1 1 160px}
 
-.score{display:flex;align-items:baseline;gap:10px;margin:8px 0 4px}
+/* result */
+.score{display:flex;align-items:baseline;gap:10px;margin:8px 0 4px;flex-wrap:wrap}
 .score b{font-family:var(--font-display);font-weight:800;font-size:4rem;line-height:1;font-variant-numeric:tabular-nums}
 .score span{color:var(--muted);font-weight:700;font-variant-numeric:tabular-nums}
-.verdict{font-family:var(--font-display);font-weight:700;font-size:1.3rem;margin:12px 0 4px}
-.by{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
-.by li{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-variant-numeric:tabular-nums}
-.by li span:first-child{min-width:0}
+.verdict{font-family:var(--font-display);font-weight:700;font-size:1.35rem;margin:12px 0 4px}
+.note{margin-top:10px;font-size:.92rem;color:var(--muted)}
 .revs{display:flex;flex-direction:column;gap:12px}
 .rev{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
 .rev p{margin:0 0 8px}
 .rev .rq{font-weight:700}
-.rev .mod{font-size:.8rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
 .rev .you{color:var(--bad)}
 .rev .ans{color:var(--good)}
 .rev .why{color:var(--muted);margin-bottom:0}
+.list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.list li{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-variant-numeric:tabular-nums}
 
 @media (prefers-reduced-motion:reduce){.bar i{transition:none}}
-@media (max-width:420px){h1{font-size:1.8rem}.q{font-size:1.25rem}}
+@media (max-width:420px){h1{font-size:1.8rem}.q{font-size:1.25rem}.mod{grid-template-columns:auto 1fr}.mod .pill{grid-column:2;justify-self:start}}
 </style>
 
 <div class="wrap" id="app"></div>
 
 <script>
 (function () {
-  var KEY = "aif-selftest-v1";
+  var KEY = "aif-course-v2";
 
-  /* In every question the FIRST option is the correct one. The page shuffles the options each time. */
-  var MODULES = [
-    { id: "m1", no: 1, title: "Foundational English and Communication",
-      blurb: "JAM practice, voice notes, common errors",
+  /* Each test question lists the correct option FIRST. The page shuffles the options every time. */
+  var MODS = [
+    { id: "m1", no: 1, weeks: "Weeks 1 and 2", title: "Foundational English and Communication",
+      goal: "Understand English better and speak it with more confidence. This module starts one step lower than a normal spoken English class, because understanding is often the real gap, not only speaking.",
+      secs: [
+        { h: "Read in two languages",
+          p: ["Short passages come in your local language and in English, side by side. You first recognise the English words. Then you start to use them yourself."],
+          ul: ["Read the passage in your local language.", "Read the same passage in English.", "Say it again in your own words."] },
+        { h: "Daily JAM (Just A Minute)",
+          p: ["Every day, speak for 1 minute on a simple topic, with no preparation. Choose topics you know well. Do not use commerce words at this stage."],
+          ex: ["Good JAM topics", "My family. My favourite festival. My town or village. A day in my life."] },
+        { h: "WhatsApp voice-note pods",
+          p: ["A pod is a group of 3 to 4 learners. Each person records an answer of 60 to 90 seconds and sends it to the group. Everyone listens. The learners in the pod give feedback first. The trainer comes later."] },
+        { h: "Common error sheet",
+          p: ["Learners moving from a local language to English often make the same three kinds of mistakes."],
+          terms: [
+            ["Articles: a, an, the", "Use 'an' before a vowel sound: an apple, an hour, an honest man. Use 'a' before a consonant sound: a book, a university."],
+            ["Tense", "If the action finished in the past, use the past tense. Say 'I completed my degree last year.' Do not say 'I complete my degree last year.'"],
+            ["Prepositions", "Some words go together: good at, interested in, afraid of, depend on. Say 'I am good at accounts.'"]
+          ] }
+      ],
+      recap: ["The real gap is often understanding, not only speaking.", "JAM is 1 minute on a simple, familiar topic.", "Voice notes are 60 to 90 seconds. Peers give feedback first.", "Check your articles, tenses and prepositions."],
       qs: [
-        { q: "What does JAM stand for in speaking practice?",
-          o: ["Just A Minute", "Job Aptitude Method", "Join A Meeting", "Judge And Mark"],
-          e: "In JAM you speak for one minute on a simple topic, without preparing." },
-        { q: "Which topic is best for a daily JAM at this stage?",
-          o: ["My favourite festival", "Input tax credit under GST", "Difference between debit note and credit note", "Steps of bank reconciliation"],
-          e: "Start with simple, familiar topics. Commerce words come later." },
-        { q: "How long should a WhatsApp voice-note answer be?",
-          o: ["60 to 90 seconds", "10 to 15 minutes", "About 5 seconds", "Over 30 minutes"],
-          e: "Short notes of 60 to 90 seconds are easy to record, listen to and give feedback on." },
-        { q: "In a voice-note pod of 3 to 4 learners, who gives feedback first?",
-          o: ["Your peers in the pod", "The trainer", "The interviewer", "Nobody"],
-          e: "Peers give feedback before the trainer joins. This keeps practice low-pressure." },
-        { q: "Choose the correct sentence.",
-          o: ["She is an honest girl.", "She is a honest girl.", "She is the honest girl of.", "She is honest a girl."],
-          e: "'Honest' starts with a vowel sound because the 'h' is silent. So we use 'an'." },
-        { q: "Choose the correct sentence.",
-          o: ["I completed my degree last year.", "I complete my degree last year.", "I am completing my degree last year.", "I completing my degree last year."],
-          e: "'Last year' points to a finished action in the past, so use the past tense: completed." },
-        { q: "Fill in the blank: I am good ___ accounts.",
-          o: ["at", "on", "by", "to"],
-          e: "We say 'good at' when we talk about a skill." },
-        { q: "Why is a passage shown in your local language next to the English one?",
-          o: ["It helps you move from recognising English to using it", "It tests your local language", "It replaces speaking practice", "It is only for trainers"],
-          e: "First you understand, then you start to speak. The local language is a bridge." }
+        { q: "For many learners, what is the real gap this module works on?", o: ["Understanding English, not only speaking it", "Typing speed", "Knowing commerce subjects", "Handwriting"], e: "The lesson says understanding is often the real gap, so the module starts one step lower." },
+        { q: "Why is a passage shown in your local language next to the English?", o: ["It helps you move from recognising English to using it", "It tests your local language", "It replaces speaking practice", "It is only for trainers"], e: "You first recognise the English words, then you start to use them." },
+        { q: "How long is one JAM round?", o: ["1 minute", "10 minutes", "30 minutes", "10 seconds"], e: "JAM means Just A Minute. You speak for 1 minute." },
+        { q: "Which topic suits daily JAM at this stage?", o: ["My favourite festival", "Bank reconciliation", "GST return filing", "Ratios in a balance sheet"], e: "Use simple, familiar topics. Commerce words come later." },
+        { q: "How long should a pod voice note be?", o: ["60 to 90 seconds", "10 to 15 minutes", "About 5 seconds", "Over 30 minutes"], e: "Short voice notes are easy to record, share and give feedback on." },
+        { q: "In a voice-note pod, who gives feedback first?", o: ["The other learners in the pod", "The trainer", "The interviewer", "Nobody"], e: "Peers give feedback first. The trainer comes later." },
+        { q: "Choose the correct sentence.", o: ["I waited for an hour.", "I waited for a hour.", "I waited for hour.", "I waited for an hours."], e: "'Hour' starts with a vowel sound because the 'h' is silent. So use 'an'." },
+        { q: "Choose the correct sentence.", o: ["I completed my degree last year.", "I complete my degree last year.", "I completing my degree last year.", "I will completed my degree last year."], e: "The action finished in the past, so use the past tense: completed." },
+        { q: "Fill in the blank: I am good ___ accounts.", o: ["at", "on", "by", "to"], e: "We say 'good at' for a skill." }
       ] },
-    { id: "m2", no: 2, title: "Gen Z Workplace Ecosystem",
-      blurb: "Office words, WhatsApp and email manners, LinkedIn",
+
+    { id: "m2", no: 2, weeks: "Week 3", title: "Gen Z Workplace Ecosystem",
+      goal: "Learn the words and habits of a modern office. If you clear the interview, you should not feel lost on your first day.",
+      secs: [
+        { h: "Words you will hear at work",
+          terms: [
+            ["Reporting manager", "The senior you report to. You take your work updates and doubts to them."],
+            ["Onboarding", "The first days after you join. You meet people and learn the systems and rules."],
+            ["Appraisal", "A review of your work, usually once a year. It can affect your pay and promotion."],
+            ["KRA (Key Result Areas)", "The main things your job is responsible for and measured on."],
+            ["Escalation", "Telling a senior about a problem you cannot solve yourself."],
+            ["TAT (Turn Around Time)", "The time allowed to finish a task. A TAT of 24 hours means finish within 24 hours."],
+            ["EOD (End of Day)", "Finish before the working day ends."]
+          ] },
+        { h: "WhatsApp and email at work",
+          p: ["Work messages are not like chats with friends. Greet your senior. Write short, clear sentences. Do not use slang or too many emojis. In an email, write a clear subject line and end with your name."],
+          ex: ["Good work message", "Good morning Sir. I have finished the report. Please check."] },
+        { h: "LinkedIn",
+          p: ["LinkedIn is an online professional profile. Recruiters search it using keywords and skills. A basic profile has a clear headline, a short summary, your education and your skills."] },
+        { h: "Office manners",
+          ul: ["Be on time. Reach 10 to 15 minutes early.", "Dress as the office expects.", "Address seniors with respect, for example Sir or Madam, unless they say otherwise.", "In meetings, listen, keep your phone on silent and note down your tasks."] },
+        { h: "Where freshers often work",
+          p: ["CA and tax firms. Bank branches. NBFCs (finance companies that give loans but are not banks). Retail chains. BPO and KPO back offices. E-commerce operations."] }
+      ],
+      recap: ["Know the seven words: reporting manager, onboarding, appraisal, KRA, escalation, TAT, EOD.", "Write polite, short, clear work messages.", "Recruiters search LinkedIn by keywords.", "Be on time and keep your phone on silent in meetings."],
       qs: [
-        { q: "Who is your 'reporting manager'?",
-          o: ["The senior you report to and ask for guidance", "The person who prints your salary slip", "A customer you serve", "A colleague who joined with you"],
-          e: "Your reporting manager is your direct senior. You share updates and ask doubts with them." },
-        { q: "What does KRA mean at work?",
-          o: ["Key Result Areas: the main things you are responsible for", "Keep Records Always", "Know Rules and Answers", "Key Rate of Appraisal"],
-          e: "KRAs are the main goals of your job. Your appraisal often looks at them." },
-        { q: "Your manager says, 'Send the report by EOD.' When is the deadline?",
-          o: ["End of the working day", "End of the week", "End of the month", "Early next morning"],
-          e: "EOD means End of Day." },
-        { q: "A customer query has a TAT of 24 hours. What does this mean?",
-          o: ["It should be solved within 24 hours", "Work can start only after 24 hours", "It can be ignored for 24 hours", "It is a 24-hour holiday"],
-          e: "TAT means Turn Around Time: the time allowed to finish a task." },
-        { q: "When should you escalate a problem?",
-          o: ["When you cannot solve it yourself and a senior must help", "Whenever you feel bored", "Before you try to understand it", "Only after the customer leaves"],
-          e: "Escalation means telling a senior about an issue you cannot solve. Do it early and share the facts." },
-        { q: "Which message is best to send your manager on WhatsApp?",
-          o: ["Good morning Sir. I have finished the report. Please check.", "hiii bro report done lol", "Report ready. Check na.", "A voice note recorded with loud music in the background"],
-          e: "Be polite, clear and short. Avoid slang and jokes in work messages." },
-        { q: "How do recruiters use LinkedIn?",
-          o: ["They search for people using keywords and skills", "Only to post festival wishes", "To pay salaries", "To file tax returns"],
-          e: "Recruiters search profiles by keywords. A clear profile helps them find you." },
-        { q: "It is your first day at the office. What is the best plan?",
-          o: ["Reach 10 to 15 minutes early and dress as the office expects", "Reach at lunch time", "Wear whatever you wore in college", "Wait for someone to call you"],
-          e: "Being on time and dressed properly shows respect and makes a good first impression." }
+        { q: "Who is your reporting manager?", o: ["The senior you report to and take doubts to", "A customer you serve", "A friend who joined with you", "The person who prints salary slips"], e: "Your reporting manager is your direct senior." },
+        { q: "What is onboarding?", o: ["The first days after joining, when you meet people and learn the systems", "Leaving the company", "A yearly holiday", "A customer complaint"], e: "Onboarding is how you settle in after you join." },
+        { q: "What is an appraisal?", o: ["A review of your work, often yearly, that can affect pay and promotion", "A new job offer", "A type of leave", "A bank loan"], e: "An appraisal reviews how well you did your work." },
+        { q: "What does KRA mean?", o: ["Key Result Areas: the main things your job is measured on", "Keep Records Always", "Know Rules and Answers", "Key Rate of Appraisal"], e: "Your KRAs are the main goals of your job." },
+        { q: "What is escalation?", o: ["Telling a senior about a problem you cannot solve yourself", "Getting a promotion", "Ignoring a problem", "Leaving the office early"], e: "Escalate when you cannot solve a problem. Share the facts clearly." },
+        { q: "A query has a TAT of 24 hours. What does this mean?", o: ["It should be solved within 24 hours", "Work can only start after 24 hours", "It can be ignored for 24 hours", "It is a 24-hour holiday"], e: "TAT means Turn Around Time, the time allowed to finish a task." },
+        { q: "Your manager says, 'Send the report by EOD.' When is the deadline?", o: ["Before the working day ends", "By the end of the month", "Tomorrow evening", "Next week"], e: "EOD means End of Day." },
+        { q: "Which message is best to send your manager?", o: ["Good morning Sir. I have finished the report. Please check.", "hiii bro report done lol", "Report ready. Check na.", "A voice note recorded with loud music"], e: "Greet, be short and clear, and avoid slang." },
+        { q: "How do recruiters use LinkedIn?", o: ["They search profiles using keywords and skills", "They only post festival wishes", "They pay salaries through it", "They file tax returns on it"], e: "Recruiters search by keywords, so a clear profile helps them find you." },
+        { q: "Which is a good habit in a meeting?", o: ["Listen, keep your phone on silent and note down your tasks", "Check your phone often", "Talk to the person next to you", "Arrive after the meeting starts"], e: "Good meeting manners show respect and help you remember your tasks." }
       ] },
-    { id: "m3", no: 3, title: "Commerce Interview Preparation",
-      blurb: "Tough questions for accounts, banking, retail and back-office roles",
+
+    { id: "m3", no: 3, weeks: "Weeks 4 and 5", title: "Commerce Interview Preparation",
+      goal: "Learn how to answer the tough questions asked for commerce roles, honestly and with confidence. Roles include accounts assistant, junior accountant, GST or tax executive, banking sales and operations, retail cashier, back-office and data-entry, and BPO or KPO finance work.",
+      secs: [
+        { h: "Tell me about yourself: Present, Past, Future",
+          p: ["Use three short parts. Do not memorise a script."],
+          ul: ["Present: who you are now. For example, a B.Com graduate learning Tally.", "Past: what you studied or did.", "Future: the role you want and why."] },
+        { h: "Honest answers about your skills",
+          p: ["You may be asked, 'Do you know Tally, GST filing or MS Excel?' Say an honest yes or no. Then say what you have done to learn. Never bluff."],
+          ex: ["Example", "I have practised basic entries in Tally and I am learning more every week."] },
+        { h: "The tough-question bank",
+          p: ["The program has a bank of 40 to 50 commonly asked questions. Each one comes with an answer framework. Learn the framework and say it in your own words. Do not memorise answers word for word, because the interviewer may change the question."],
+          table: { head: ["Question", "What the framework teaches"], rows: [
+            ["Why should we hire a fresher with no experience?", "Link your strengths (accuracy, willingness to learn, discipline) to what the role needs."],
+            ["Do you know Tally, Excel or GST returns?", "Honest yes or no, plus your effort to learn. Never bluff."],
+            ["Are you okay with rotational shifts or relocation?", "A direct, confident yes or no. Add one practical point only if truly needed."],
+            ["What salary do you expect?", "Say a range tied to the role and the market. Do not guess."],
+            ["Why is there a gap after graduation?", "Explain the facts calmly, for example distance learning, family responsibility or upskilling."],
+            ["Sell me this pen.", "Use structure: feature, benefit, close."],
+            ["Where do you see yourself in 3 years?", "A realistic answer linked to the role. Avoid big, empty claims."]
+          ] } },
+        { h: "Family and money questions",
+          p: ["You may hear, 'Why should we invest in training you?' or 'Why do you want to relocate for this salary?' Answer with confidence and without apology. Talk about what you will give, such as fast learning, discipline and full effort. Do not ask for pity."] }
+      ],
+      recap: ["Present, Past, Future for 'Tell me about yourself'.", "Be honest about skills and show you are learning.", "Learn the framework. Do not memorise word for word.", "Answer family and money questions with dignity, not apology."],
       qs: [
-        { q: "Which simple template helps you answer 'Tell me about yourself'?",
-          o: ["Present, Past, Future", "A, B, C", "Name, Age, Address", "Question, Answer, Thanks"],
-          e: "Start with who you are now, then what you studied, then what you want to do next." },
-        { q: "The interviewer asks, 'Do you know Tally?' You have practised only a little. What is the best answer?",
-          o: ["'I have practised basic entries and I am learning more.'", "'Yes, I am an expert.'", "'No.' and then stay silent", "'Tally is not important for this job.'"],
-          e: "Be honest and show that you are learning. A bluff can be caught quickly." },
-        { q: "You are asked, 'Are you okay with rotational shifts?' You are fine with them, but late-night travel is difficult. What is the best answer?",
-          o: ["'Yes, I can do shifts. I would only need help with late-night transport.'", "'No, I only work in the morning.'", "'Yes' to everything, then complain later", "'I will think about it' and nothing more"],
-          e: "Give a clear yes or no. Add one practical point only if it is truly needed." },
-        { q: "'What salary do you expect?' What is a good approach?",
-          o: ["Say a realistic range based on the role and the market", "Say a very high number to bargain", "Say 'Anything, money does not matter'", "Refuse to answer"],
-          e: "Find out the usual pay for the role before the interview. A range shows you did your homework." },
-        { q: "The interviewer asks why there is a gap after your graduation. Which answer is best?",
-          o: ["Explain the real reason calmly and say what you did in that time", "Say it is not their business", "Describe a job you never did", "Say you were resting, with no details"],
-          e: "Give the facts without feeling guilty. Distance learning, family duty and courses are all fair reasons." },
-        { q: "'Why should we hire a fresher with no experience?' Which strengths can you mention?",
-          o: ["Accuracy, willingness to learn and discipline", "Only your marks", "That you need a job urgently", "That other companies rejected you"],
-          e: "Link your strengths to what the role needs." },
-        { q: "'Sell me this pen.' Which structure should you follow?",
-          o: ["Feature, benefit, close", "Price, discount, apology", "Name, age, school", "Story, joke, silence"],
-          e: "Say what the pen has, explain why it helps the buyer, then ask for the sale." },
-        { q: "How should you use the practice bank of 40 to 50 questions?",
-          o: ["Learn the answer framework and speak in your own words", "Memorise every answer word for word", "Read them once, the night before", "Skip them if you feel confident"],
-          e: "Word-for-word answers break down when the question changes. A framework lets you improvise." }
+        { q: "Which template helps you answer 'Tell me about yourself'?", o: ["Present, Past, Future", "Name, Age, Address", "A, B, C", "Question, Answer, Thanks"], e: "Say who you are now, what you studied, and what you want next." },
+        { q: "You are asked, 'Do you know Tally?' You have practised only a little. What is the best answer?", o: ["'I have practised basic entries and I am learning more.'", "'Yes, I am an expert.'", "'No.' and then silence", "'Tally is not needed for this job.'"], e: "Be honest and show you are learning. Never bluff." },
+        { q: "You are asked about rotational shifts. You are fine with them, but night travel is hard. What is the best answer?", o: ["'Yes, I can do shifts. I would only need a safe way to travel at night.'", "'Yes' to everything, then complain later", "'No' with no reason", "'I will think about it' and nothing more"], e: "Give a direct answer. Add one practical point only if truly needed." },
+        { q: "'What salary do you expect?' What is a good approach?", o: ["Say a range tied to the role and the market", "Say a very high number to bargain", "Say 'Anything is fine'", "Refuse to answer"], e: "Find out the usual pay for the role and say a range." },
+        { q: "Why is there a gap after your graduation? Which answer is best?", o: ["Explain the real reason calmly, such as distance learning, family duty or upskilling", "Say it is private", "Describe a job you never did", "Say sorry again and again"], e: "Give the facts without feeling defensive." },
+        { q: "'Why should we hire a fresher with no experience?' What should you do?", o: ["Link your accuracy, willingness to learn and discipline to what the role needs", "Say 'Please give me a chance'", "Talk only about your marks", "Say other companies rejected you"], e: "Connect your strengths to the role's real needs." },
+        { q: "'Sell me this pen.' Which structure should you follow?", o: ["Feature, benefit, close", "Price, discount, apology", "Name, age, school", "Story, joke, silence"], e: "Say what the pen has, why it helps the buyer, then ask for the sale." },
+        { q: "How should you use the bank of 40 to 50 tough questions?", o: ["Learn the answer framework and speak in your own words", "Memorise every answer word for word", "Read them once, the night before", "Skip them if you feel confident"], e: "Word-for-word answers break down when the question changes." },
+        { q: "'Why should we invest in training you?' Which answer shows dignity?", o: ["'I learn quickly, I am disciplined and I will give this job my full effort.'", "'Please pity my family situation.'", "'Sorry, I know I am not good enough.'", "'You will have to train everyone anyway.'"], e: "Talk about what you will give. Do not ask for pity or apologise." }
       ] },
-    { id: "m4", no: 4, title: "Group Discussion and Aptitude",
-      blurb: "GD rubric, peer practice, number and logic questions",
+
+    { id: "m4", no: 4, weeks: "Week 6", title: "Group Discussion and Aptitude",
+      goal: "Prepare for group discussions and the aptitude rounds in campus drives and walk-in interviews.",
+      secs: [
+        { h: "The GD scoring rubric",
+          p: ["After a practice round, mark yourself or a friend on four things."],
+          terms: [
+            ["Initiation", "Did you start the discussion or add a clear point?"],
+            ["Listening", "Did you hear others and refer to their points?"],
+            ["Relevance", "Did you stay on the topic?"],
+            ["Conclusion", "Did you sum up the discussion at the end?"]
+          ] },
+        { h: "Practise with peers first",
+          p: ["You practise in peer-only pods before any round that a trainer watches. This lowers the fear of performing, so you can try, make mistakes and improve."] },
+        { h: "Aptitude refreshers",
+          p: ["The same question types come again and again in TCS NQT-style tests, bank clerical exams and campus aptitude rounds, whatever your stream."],
+          terms: [
+            ["Percentage and discount", "Percentage of a number = number × percent ÷ 100. A 20% discount on ₹500: 500 × 20 ÷ 100 = ₹100. You pay 500 − 100 = ₹400."],
+            ["Simple interest", "Interest = Principal × Rate × Time ÷ 100. For ₹2,000 at 5% a year for 3 years: 2,000 × 5 × 3 ÷ 100 = ₹300."],
+            ["Number series", "Find the rule that links the numbers. In 2, 4, 8, 16 each number is doubled, so the next is 32. In 5, 10, 15, 20 you add 5, so the next is 25."],
+            ["Logical reasoning", "All bank clerks have passed a test. Meena is a bank clerk. So Meena has passed a test."]
+          ] }
+      ],
+      recap: ["Rubric: initiation, listening, relevance, conclusion.", "Practise in peer-only pods first.", "Percentage, simple interest, number series and logic keep coming back in tests."],
       qs: [
-        { q: "Which four things does the GD scoring rubric check?",
-          o: ["Initiation, listening, relevance and conclusion", "Dress, speed, volume and age", "Marks, rank, age and city", "Jokes, anger, silence and gestures"],
-          e: "You can score yourself or a friend on these four points after every practice round." },
-        { q: "What is a good way to start a group discussion?",
-          o: ["Give a short, clear opening point on the topic", "Speak loudly so everyone listens", "Wait until the very end", "Ask the examiner what to say"],
-          e: "A calm opening point shows initiative. You do not need to be the loudest." },
-        { q: "Another candidate is speaking. What should you do?",
-          o: ["Listen, then link your next point to what they said", "Interrupt to show you know more", "Look at your phone", "Talk to the person next to you"],
-          e: "Listening is part of the score. Referring to another person's point shows you paid attention." },
-        { q: "Why do learners practise GD in peer-only pods first?",
-          o: ["It reduces fear before a trainer watches", "Trainers do not like GDs", "Peers are always correct", "It saves internet data"],
-          e: "Practising with friends makes it easier to try, make mistakes and improve." },
-        { q: "A shirt costs ₹800. The shop gives a 25% discount. What do you pay?",
-          o: ["₹600", "₹650", "₹200", "₹775"],
-          e: "25% of 800 is 200. So 800 minus 200 is 600." },
-        { q: "Find the next number: 2, 4, 8, 16, ?",
-          o: ["32", "24", "20", "18"],
-          e: "Each number is double the one before it. 16 × 2 = 32." },
-        { q: "What is the simple interest on ₹5,000 at 10% per year for 2 years?",
-          o: ["₹1,000", "₹500", "₹1,500", "₹2,000"],
-          e: "Simple interest = (Principal × Rate × Time) ÷ 100 = (5,000 × 10 × 2) ÷ 100 = ₹1,000." },
-        { q: "All clerks in the bank are graduates. Ravi is a clerk in the bank. What must be true?",
-          o: ["Ravi is a graduate", "Ravi is not a graduate", "All graduates are clerks", "Ravi is the manager"],
-          e: "If every clerk is a graduate and Ravi is a clerk, then Ravi is a graduate." }
+        { q: "Which four things does the GD scoring rubric check?", o: ["Initiation, listening, relevance and conclusion", "Dress, speed, volume and age", "Marks, rank, age and city", "Jokes, anger, silence and gestures"], e: "Mark yourself or a friend on these four after each practice round." },
+        { q: "Another candidate is speaking in a GD. What does the rubric want from you?", o: ["Listen and refer to their point in your own", "Interrupt to show you know more", "Look at your phone", "Wait silently until the end"], e: "'Listening' means you heard others and linked to what they said." },
+        { q: "Why do learners practise GD in peer-only pods first?", o: ["It reduces the fear of performing before a trainer watches", "Trainers dislike GDs", "Peers are always right", "It saves internet data"], e: "Practising with peers makes it easier to try and improve." },
+        { q: "Which tests have the same types of aptitude questions again and again?", o: ["TCS NQT-style tests, bank clerical exams and campus rounds", "Only driving tests", "Only school board exams", "Only cooking contests"], e: "These question types repeat, whatever your stream." },
+        { q: "A shirt costs ₹800. The shop gives a 25% discount. What do you pay?", o: ["₹600", "₹650", "₹200", "₹775"], e: "25% of 800 = 800 × 25 ÷ 100 = 200. You pay 800 − 200 = ₹600." },
+        { q: "Find the next number: 3, 6, 12, 24, ?", o: ["48", "30", "36", "27"], e: "Each number is doubled. 24 × 2 = 48." },
+        { q: "What is the simple interest on ₹5,000 at 10% a year for 2 years?", o: ["₹1,000", "₹500", "₹1,500", "₹2,000"], e: "5,000 × 10 × 2 ÷ 100 = ₹1,000." },
+        { q: "All shop assistants wear a uniform. Raju is a shop assistant. What must be true?", o: ["Raju wears a uniform", "Raju does not wear a uniform", "Everyone who wears a uniform is a shop assistant", "Raju is the manager"], e: "If all shop assistants wear a uniform and Raju is one, Raju wears a uniform." }
       ] },
-    { id: "m5", no: 5, title: "Resume and Digital Presence",
-      blurb: "Fresher resume, LinkedIn and Naukri, email manners",
+
+    { id: "m5", no: 5, weeks: "Week 7", title: "Resume and Digital Presence",
+      goal: "Make a one-page fresher resume and a useful LinkedIn or Naukri profile, and write the emails a job search needs.",
+      secs: [
+        { h: "The one-page fresher resume",
+          p: ["Use a fresher template, not the format for an experienced professional. Keep it to one page and keep it honest."],
+          ul: ["Your name and contact details, with a simple email address.", "A short summary of two lines.", "Education.", "Skills, for example Tally, GST basics, MS Excel.", "Projects, courses or internships.", "Your strengths."] },
+        { h: "LinkedIn and Naukri checklist",
+          ul: ["Headline: who you are, your skills and the role you want.", "Summary: two or three short lines about you.", "Keywords: add words recruiters search for, such as Tally, GST and MS Excel."],
+          ex: ["Example headline", "B.Com Graduate | Tally and GST basics | Looking for an Accounts Assistant role"] },
+        { h: "Email templates",
+          p: ["Use an email address with your own name, such as priya.nair22@gmail.com. You need three emails."],
+          terms: [
+            ["Application email", "Subject: Application for Junior Accountant – Priya Nair. Write two or three short lines and attach your resume."],
+            ["Follow-up email", "If you do not hear back after about a week, send a short, polite email asking for the status."],
+            ["Thank-you note", "After an interview, send a short thank-you email within a day."]
+          ] }
+      ],
+      recap: ["One page. Fresher format.", "Headline, summary and keywords on LinkedIn and Naukri.", "Three emails: application, follow-up and thank-you."],
       qs: [
-        { q: "How long should a fresher's resume be?",
-          o: ["One page", "Five pages", "Ten pages", "Half a line"],
-          e: "Freshers have less to show. One clean page is easy for a recruiter to read." },
-        { q: "Which LinkedIn headline is best for a B.Com fresher?",
-          o: ["B.Com Graduate | Tally and GST basics | Looking for an Accounts Assistant role", "Hello everyone", "Student", "Jobless, please help"],
-          e: "A good headline tells who you are, what skills you have and what role you want." },
-        { q: "Why add words like 'Tally', 'GST' and 'MS Excel' to your Naukri and LinkedIn profile?",
-          o: ["Recruiters search using these words", "They make the page load faster", "They are needed to log in", "They are only for decoration"],
-          e: "If your skills are missing from your profile, recruiters who search for them will not find you." },
-        { q: "Which email address is best for job applications?",
-          o: ["priya.nair22@gmail.com", "cute_princess_786@gmail.com", "dontdisturb@gmail.com", "boss.of.bcom@gmail.com"],
-          e: "Use a simple address with your own name. It looks professional." },
-        { q: "Which subject line is best for a job application email?",
-          o: ["Application for Junior Accountant – Priya Nair", "Hello", "Please read", "Urgent!!!"],
-          e: "The subject should say what you are applying for and who you are." },
-        { q: "What should you send after an interview?",
-          o: ["A short thank-you email", "Nothing, ever", "A long complaint", "A message every hour"],
-          e: "A short thank-you shows good manners and keeps you in the recruiter's mind. Send it within a day." },
-        { q: "You applied a week ago and have not heard back. What is the right step?",
-          o: ["Send a polite, short follow-up email", "Call the company ten times a day", "Apply again with a different name", "Post angry comments about them"],
-          e: "A polite follow-up asks for the status. It shows interest without pressure." },
-        { q: "You have no job experience. What should your resume show?",
-          o: ["Education, skills, projects and any course or internship", "Made-up work experience", "Nothing at all", "Only your hobbies"],
-          e: "Honest details about your skills and learning are enough for a fresher resume." }
+        { q: "How long should a fresher's resume be?", o: ["One page", "Five pages", "Ten pages", "Half a line"], e: "One clean page is easy for a recruiter to read." },
+        { q: "Which resume format should a fresher use?", o: ["A fresher template", "The format for an experienced professional", "A long story with no headings", "A photo album"], e: "The program uses a one-page fresher template." },
+        { q: "You have no job experience. What should your resume show?", o: ["Education, skills, and any projects, courses or internships", "Made-up work experience", "Nothing at all", "Only your hobbies"], e: "Honest details about your skills and learning are enough for a fresher." },
+        { q: "Which LinkedIn headline is best for a B.Com fresher?", o: ["B.Com Graduate | Tally and GST basics | Looking for an Accounts Assistant role", "Hello everyone", "Student", "Jobless, please help"], e: "A good headline gives who you are, your skills and the role you want." },
+        { q: "Why add words like Tally, GST and MS Excel to your profile?", o: ["Recruiters search using these keywords", "They make the page load faster", "They are needed to log in", "They are only for decoration"], e: "If your skills are missing, recruiters who search for them will not find you." },
+        { q: "Which email address is best for job applications?", o: ["priya.nair22@gmail.com", "cute_princess_786@gmail.com", "dontdisturb@gmail.com", "boss.of.bcom@gmail.com"], e: "Use a simple address with your own name." },
+        { q: "Which subject line is best for an application email?", o: ["Application for Junior Accountant – Priya Nair", "Hello", "Please read", "Urgent!!!"], e: "The subject should say what you apply for and who you are." },
+        { q: "You applied a week ago and have not heard back. What is the right step?", o: ["Send a short, polite follow-up email", "Call ten times a day", "Apply again with a different name", "Post angry comments about the company"], e: "A polite follow-up shows interest without pressure." },
+        { q: "What should you send after an interview?", o: ["A short thank-you email within a day", "Nothing, ever", "A long complaint", "A message every hour"], e: "A thank-you note shows good manners." }
       ] },
-    { id: "m6", no: 6, title: "Confidence, Dignity and Honest Self-Presentation",
-      blurb: "Saying 'I don't know', pausing, speaking about your background",
+
+    { id: "m6", no: 6, weeks: "Week 8", title: "Confidence, Dignity and Honest Self-Presentation",
+      goal: "Many first-generation learners do badly in interviews. The cause is often fear of being judged for their background, not lack of ability. This module works on that fear.",
+      secs: [
+        { h: "'I don't know' is an honest answer",
+          p: ["You do not have to hide it when you do not know something. Say it honestly and show that you want to learn. Do not invent an answer."],
+          ex: ["Example", "I am not sure about this, but I would like to learn it."] },
+        { h: "Speak about your background as a fact",
+          p: ["If the interviewer asks about your village, your family or your money situation, state it plainly and without apology. Then connect it to your strengths."],
+          ex: ["Example", "I am from a village and my parents are farmers. I studied with limited resources, so I learned to work hard."] },
+        { h: "Breathe and pause",
+          p: ["Before you answer, take one slow breath in and one slow breath out. Then pause for two or three seconds. A short silence looks like thinking time. It does not look like failure."] },
+        { h: "Say why a move or a job is right for you",
+          p: ["If asked, 'Why do you want to relocate for this salary?', say what the role gives you, such as experience and learning, without apology."],
+          ex: ["Example", "This role gives me the experience I need to grow, and I am ready to move."] }
+      ],
+      recap: ["Fear of being judged, not lack of ability, holds many learners back.", "'I don't know' is acceptable when said honestly.", "State your background as a fact, without apology.", "Breathe and pause. Silence reads as thinking time."],
       qs: [
-        { q: "Why do many first-generation learners do badly in interviews?",
-          o: ["They fear being judged for their background, even though they are capable", "They have no ability", "Interviewers dislike freshers", "They study too much"],
-          e: "The problem is often confidence, not ability. This module works on that fear." },
-        { q: "You do not know the answer to a question. What is a good reply?",
-          o: ["'I am not sure about this, but I would like to learn it.'", "Make up an answer quickly", "Say nothing and look away", "Argue with the interviewer"],
-          e: "Saying 'I don't know' honestly is acceptable. Guessing wildly is worse." },
-        { q: "After a question, you need a moment to think. What should you do?",
-          o: ["Take a breath and pause for a few seconds", "Say 'um' again and again", "Leave the room", "Answer something unrelated"],
-          e: "A short pause looks like thinking time. It does not look like failure." },
-        { q: "Which breathing habit helps before you answer?",
-          o: ["One slow breath in and one slow breath out", "Holding your breath for a minute", "Breathing very fast", "Sighing loudly"],
-          e: "Slow breathing calms your body and your voice." },
-        { q: "The interviewer asks where you grew up, and it is a village. How should you say it?",
-          o: ["Plainly, without apology, then link it to your strengths", "Hide the name of the village", "Apologise for it", "Say you grew up in a big city"],
-          e: "Your background is a fact, not a fault. State it simply and move on to what you bring." },
-        { q: "'Why should we invest in training you?' Which answer shows dignity?",
-          o: ["'I learn quickly, I am disciplined and I will give this job my full effort.'", "'Please give me a chance, I have no other option.'", "'You should feel sorry for my family situation.'", "'You will have to train everyone anyway.'"],
-          e: "Speak about what you can offer. Do not ask for sympathy." },
-        { q: "'Why do you want to relocate for this salary?' Which answer is confident?",
-          o: ["'This role gives me the experience I need to grow, and I am ready to move.'", "'I have no choice.'", "'I will leave as soon as I get a better offer.'", "'Salary does not matter to me at all.'"],
-          e: "Connect the move to the chance to learn and grow, and say it in a calm tone." },
-        { q: "You realise you gave a wrong answer a minute ago. What now?",
-          o: ["Calmly say you want to correct it, give the right answer and continue", "Pretend nothing happened and panic inside", "Leave the interview", "Blame the interviewer"],
-          e: "A quick, calm correction shows honesty and confidence." }
+        { q: "Why do many first-generation learners do badly in interviews?", o: ["They fear being judged for their background, even though they are capable", "They have no ability", "Interviewers dislike freshers", "They study too much"], e: "The cause is often confidence, not ability." },
+        { q: "You do not know the answer to a question. What is a good reply?", o: ["'I am not sure about this, but I would like to learn it.'", "Make up an answer quickly", "Say nothing and look away", "Argue with the interviewer"], e: "Saying 'I don't know' honestly is acceptable." },
+        { q: "How should you talk about growing up in a village if it comes up?", o: ["Plainly, without apology, then connect it to your strengths", "Hide the name of the village", "Apologise for it", "Say you grew up in a big city"], e: "Your background is a fact, not a fault." },
+        { q: "What should you do before you answer a tough question?", o: ["Take one slow breath and pause for a few seconds", "Say 'um' again and again", "Answer something unrelated", "Leave the room"], e: "A slow breath and a short pause help you think." },
+        { q: "How does a short silence look to an interviewer?", o: ["Like thinking time, not failure", "Like you are rude", "Like you want to leave", "Like you have not studied"], e: "Pause techniques make silence read as thinking time." },
+        { q: "'Why should we invest in training you?' Which answer shows dignity?", o: ["'I learn quickly, I am disciplined and I will give this job my full effort.'", "'Please give me a chance, I have no other option.'", "'You should feel sorry for my family situation.'", "'Sorry, I am not good enough.'"], e: "Speak about what you offer. Do not ask for sympathy." },
+        { q: "'Why do you want to relocate for this salary?' Which answer is confident?", o: ["'This role gives me the experience I need to grow, and I am ready to move.'", "'I have no choice.'", "'I will leave as soon as I get a better offer.'", "'Salary does not matter to me at all.'"], e: "Link the move to experience and growth, and say it calmly." }
       ] }
   ];
 
   var app = document.getElementById("app");
-  var S = null;
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var T = null;            /* current test state */
+  var confirming = false;  /* reset confirmation on home */
 
   function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
   function shuffle(a) {
@@ -329,178 +385,210 @@ h1{font-family:var(--font-display);font-weight:800;font-size:2.1rem;line-height:
     }
     return a;
   }
-  function load() {
-    try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { return {}; }
-  }
-  function save(id, s, n) {
-    var d = load();
-    var b = d[id];
-    if (!b || s / n > b.s / b.n) {
-      d[id] = { s: s, n: n };
-      try { localStorage.setItem(KEY, JSON.stringify(d)); } catch (e) {}
-    }
-  }
-  function build(qs) {
-    return qs.map(function (q) {
-      return {
-        q: q.q, e: q.e, m: q.m,
-        opts: shuffle(q.o.map(function (t, k) { return { t: t, ok: k === 0 }; }))
-      };
-    });
-  }
 
+  /* progress, kept in this browser only */
+  var P = {};
+  try { P = JSON.parse(localStorage.getItem(KEY)) || {}; } catch (e) { P = {}; }
+  function saveP() { try { localStorage.setItem(KEY, JSON.stringify(P)); } catch (e) {} }
+  function isDone(i) { return !!(P[MODS[i].id] && P[MODS[i].id].passed); }
+  function isOpen(i) { return i === 0 || isDone(i - 1); }
+  function doneCount() { var c = 0; for (var i = 0; i < MODS.length; i++) if (isDone(i)) c++; return c; }
+  function nextIndex() { for (var i = 0; i < MODS.length; i++) if (!isDone(i)) return i; return -1; }
+
+  function up() { window.scrollTo(0, 0); }
+
+  /* ---------- home ---------- */
   function home() {
-    S = null;
-    var best = load();
-    var mockBest = best.mock ? " · Best score " + best.mock.s + "/" + best.mock.n : "";
-    var cards = MODULES.map(function (m) {
-      var b = best[m.id];
-      return '<button class="card" data-action="start" data-id="' + m.id + '">' +
-        '<span class="no">Module ' + m.no + '</span>' +
-        '<span class="t">' + esc(m.title) + '</span>' +
-        '<span class="b">' + esc(m.blurb) + '</span>' +
-        '<span class="meta">' + m.qs.length + ' questions' + (b ? " · Best " + b.s + "/" + b.n : "") + '</span>' +
-        '</button>';
+    T = null;
+    var dc = doneCount(), n = MODS.length, nx = nextIndex();
+    var items = MODS.map(function (m, i) {
+      var d = isDone(i), o = isOpen(i);
+      var pill = d ? '<span class="pill done">Cleared</span>' : (o ? '<span class="pill open">Open</span>' : '<span class="pill">Locked</span>');
+      return '<li><button class="mod' + (d ? " done" : "") + '" data-action="lesson" data-i="' + i + '"' + (o ? "" : " disabled") + '>' +
+        '<span class="n">' + (d ? "✓" : m.no) + '</span>' +
+        '<span><span class="t">' + esc(m.title) + '</span><span class="w">' + esc(m.weeks) + ' · ' + m.qs.length + ' questions</span></span>' +
+        pill + '</button></li>';
     }).join("");
+    var cta = nx === -1
+      ? '<button class="primary" data-action="finish">You cleared all six modules. See your result</button>'
+      : '<button class="primary" data-action="lesson" data-i="' + nx + '">' + (dc === 0 ? "Start Module 1" : "Continue with Module " + MODS[nx].no) + '</button>';
+    var reset = confirming
+      ? '<div class="confirm"><span>Clear all your progress?</span><button class="danger" data-action="reset-yes">Yes, clear it</button><button data-action="reset-no">Cancel</button></div>'
+      : '<button class="link reset" data-action="reset">Clear my progress</button>';
     app.innerHTML =
-      '<header>' +
-      '<p class="eyebrow">Aasha Infinite Foundation</p>' +
-      '<h1>Employability Self-Test</h1>' +
-      '<p class="lead">Check what you have learnt from the Employability Readiness Program. Pick a module, answer the questions, and see your score. Your scores stay on your phone.</p>' +
-      '</header>' +
-      '<button class="mock" data-action="start" data-id="mock">' +
-      '<span class="t">Full Mock Test</span>' +
-      '<span class="b">24 questions from all six modules. Answers are shown at the end, like a real test.</span>' +
-      '<span class="meta">Start the test' + mockBest + '</span>' +
-      '</button>' +
-      '<h2 class="sec"><a href="https://github.com/deepakmalaysia-pixel/employability-self-test-commerce-stream/blob/main/Upskilling%20program%20for%20Commerce%20Graduate%20students%20(1).pdf"></a></h2>' +
-      '<div class="grid">' + cards + '</div>' +
-      '<p class="foot">In a module test, you see the right answer and a short explanation after every question. In the full mock test, you see them only at the end.</p>';
-    window.scrollTo(0, 0);
+      '<header><p class="eyebrow">Aasha Infinite Foundation</p>' +
+      '<h1>Employability Readiness Program</h1>' +
+      '<p class="lead">Six modules for commerce graduates. Read each lesson, then take its test straight away.</p></header>' +
+      '<div class="how"><b>How it works</b><ol>' +
+      '<li>Read the lesson.</li><li>Take the test. You see the right answer after every question.</li>' +
+      '<li>Score 100% to move ahead. If you score less, repeat the module.</li></ol></div>' +
+      '<div class="prog"><span>' + dc + ' of ' + n + ' modules cleared</span></div>' +
+      '<div class="bar" aria-hidden="true"><i style="width:' + Math.round(dc / n * 100) + '%"></i></div>' +
+      '<div class="actions">' + cta + '</div>' +
+      '<ul class="path">' + items + '</ul>' +
+      '<p class="foot">Your progress is saved on this phone only. After each module, also do the mock interview with your pod or trainer.</p>' + reset;
+    up();
   }
 
-  function start(id) {
-    var items;
-    if (id === "mock") {
-      var pool = [];
-      MODULES.forEach(function (m) {
-        shuffle(m.qs).slice(0, 4).forEach(function (q) {
-          pool.push({ q: q.q, o: q.o, e: q.e, m: m.title });
-        });
-      });
-      items = build(shuffle(pool));
-      S = { id: id, mode: "mock", title: "Full Mock Test" };
-    } else {
-      var mod = MODULES.filter(function (x) { return x.id === id; })[0];
-      items = build(mod.qs.map(function (q) { return { q: q.q, o: q.o, e: q.e, m: mod.title }; }));
-      S = { id: id, mode: "practice", title: "Module " + mod.no + " test" };
-    }
-    S.items = items; S.i = 0; S.picks = [];
-    quiz();
-    window.scrollTo(0, 0);
+  /* ---------- lesson ---------- */
+  function fmt(s) { return esc(s); }
+  function lesson(i, retry) {
+    var m = MODS[i];
+    var h = '';
+    h += '<div class="top"><button class="link" data-action="home">← All modules</button><span class="count">' + esc(m.weeks) + '</span></div>';
+    h += '<p class="eyebrow">Module ' + m.no + ' of ' + MODS.length + '</p>';
+    h += '<h1>' + esc(m.title) + '</h1>';
+    h += '<div class="steps" aria-label="Steps"><span class="on">1. Learn</span><span>2. Test</span></div>';
+    if (retry) h += '<div class="banner" role="status"><b>Repeat this module.</b> Read the lesson again. Then take the test and aim for 100%.</div>';
+    h += '<div class="lesson"><p class="goal">' + esc(m.goal) + '</p>';
+    m.secs.forEach(function (s) {
+      h += '<h2 class="sec">' + esc(s.h) + '</h2>';
+      (s.p || []).forEach(function (p) { h += '<p>' + fmt(p) + '</p>'; });
+      if (s.ul) h += '<ul>' + s.ul.map(function (x) { return '<li>' + fmt(x) + '</li>'; }).join("") + '</ul>';
+      if (s.terms) h += '<div class="terms">' + s.terms.map(function (t) { return '<div class="term"><b>' + esc(t[0]) + '</b>' + fmt(t[1]) + '</div>'; }).join("") + '</div>';
+      if (s.ex) h += '<div class="ex"><span class="lab">' + esc(s.ex[0]) + '</span>' + fmt(s.ex[1]) + '</div>';
+      if (s.table) {
+        h += '<div class="tblbox"><table><thead><tr>' + s.table.head.map(function (x) { return '<th>' + esc(x) + '</th>'; }).join("") + '</tr></thead><tbody>' +
+          s.table.rows.map(function (r) { return '<tr>' + r.map(function (c) { return '<td>' + fmt(c) + '</td>'; }).join("") + '</tr>'; }).join("") + '</tbody></table></div>';
+      }
+    });
+    h += '</div>';
+    h += '<div class="recap"><h2>Remember</h2><ul>' + m.recap.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join("") + '</ul></div>';
+    h += '<button class="primary" data-action="test" data-i="' + i + '">I have read this. Start the test (' + m.qs.length + ' questions)</button>';
+    app.innerHTML = h;
+    up();
   }
 
-  function quiz() {
-    var it = S.items[S.i], n = S.items.length, L = "ABCD";
-    var picked = S.picks[S.i];
-    var has = picked !== undefined;
-    var practice = S.mode === "practice";
+  /* ---------- test ---------- */
+  function startTest(i) {
+    var m = MODS[i];
+    var rec = P[m.id] || {};
+    var tries = (rec.tries || 0);
+    var qs = m.qs.slice();
+    if (tries > 0) qs = shuffle(qs);
+    T = {
+      i: i, tries: tries + 1, picks: [],
+      items: qs.map(function (q) {
+        return { q: q.q, e: q.e, opts: shuffle(q.o.map(function (t, k) { return { t: t, ok: k === 0 }; })) };
+      }),
+      k: 0
+    };
+    renderQ();
+    up();
+  }
+
+  function renderQ() {
+    var it = T.items[T.k], n = T.items.length, L = "ABCD";
+    var picked = T.picks[T.k], has = picked !== undefined;
     var opts = it.opts.map(function (o, k) {
       var cls = "opt", mark = L[k];
-      if (practice && has) {
+      if (has) {
         if (o.ok) { cls += " right"; mark = "✓"; }
         else if (k === picked) { cls += " wrong"; mark = "✗"; }
-      } else if (picked === k) { cls += " sel"; }
-      return '<button class="' + cls + '" data-action="pick" data-k="' + k + '"' +
-        (practice && has ? " disabled" : "") + ' aria-pressed="' + (picked === k) + '">' +
+      }
+      return '<button class="' + cls + '" data-action="pick" data-k="' + k + '"' + (has ? " disabled" : "") + '>' +
         '<span class="bub">' + mark + '</span><span class="txt">' + esc(o.t) + '</span></button>';
     }).join("");
     var fb = "";
-    if (practice && has) {
+    if (has) {
       var ok = it.opts[picked].ok;
       var right = it.opts.filter(function (o) { return o.ok; })[0].t;
-      fb = '<div class="fb ' + (ok ? "good" : "bad") + '" role="status"><strong>' +
-        (ok ? "Correct." : "Not quite.") + '</strong> ' +
+      fb = '<div class="fb ' + (ok ? "good" : "bad") + '" role="status"><strong>' + (ok ? "Correct." : "Not quite.") + '</strong> ' +
         (ok ? "" : "The right answer is <b>" + esc(right) + "</b>. ") + esc(it.e) + '</div>';
     }
+    var m = MODS[T.i];
     app.innerHTML =
-      '<div class="top"><button class="link" data-action="home">← All tests</button>' +
-      '<span class="count">Question ' + (S.i + 1) + ' of ' + n + '</span></div>' +
-      '<div class="bar" aria-hidden="true"><i style="width:' + Math.round((S.i + (has ? 1 : 0)) / n * 100) + '%"></i></div>' +
-      '<p class="kicker">' + esc(practice ? S.title : it.m) + '</p>' +
+      '<div class="top"><button class="link" data-action="lesson" data-i="' + T.i + '">← Back to lesson</button>' +
+      '<span class="count">Question ' + (T.k + 1) + ' of ' + n + '</span></div>' +
+      '<div class="steps" aria-label="Steps"><span>1. Learn</span><span class="on">2. Test</span></div>' +
+      '<div class="bar" aria-hidden="true"><i style="width:' + Math.round((T.k + (has ? 1 : 0)) / n * 100) + '%"></i></div>' +
+      '<p class="kicker">Module ' + m.no + ' test · Attempt ' + T.tries + '</p>' +
       '<h2 class="q">' + esc(it.q) + '</h2>' +
       '<div class="opts">' + opts + '</div>' + fb +
       '<div class="nav"><button class="primary" data-action="next"' + (has ? "" : " disabled") + '>' +
-      (S.i === n - 1 ? "See my score" : "Next question") + '</button></div>';
+      (T.k === n - 1 ? "See my score" : "Next question") + '</button></div>';
   }
 
+  /* ---------- result ---------- */
   function result() {
-    var n = S.items.length, sc = 0, wrong = [], by = {};
-    S.items.forEach(function (it, i) {
-      var ok = it.opts[S.picks[i]].ok;
-      by[it.m] = by[it.m] || { s: 0, n: 0 };
-      by[it.m].n++;
-      if (ok) { sc++; by[it.m].s++; } else { wrong.push(i); }
-    });
-    save(S.id, sc, n);
-    var pct = sc / n, v;
-    if (pct >= 0.8) v = ["Strong result.", "You know this well. Try another module or the full mock test."];
-    else if (pct >= 0.5) v = ["Good start.", "Read the explanations below, then try again to improve your score."];
-    else v = ["Keep practising.", "Read the explanations below, go back to the lesson, and try again. Every try helps."];
+    var m = MODS[T.i], n = T.items.length, sc = 0, wrong = [];
+    T.items.forEach(function (it, k) { if (it.opts[T.picks[k]].ok) sc++; else wrong.push(k); });
+    var pass = sc === n;
+    var rec = P[m.id] || {};
+    rec.tries = T.tries;
+    rec.best = Math.max(rec.best || 0, sc);
+    if (pass) rec.passed = true;
+    P[m.id] = rec; saveP();
 
-    var breakdown = "";
-    if (S.mode === "mock") {
-      breakdown = '<h2 class="sec">Score by module</h2><ul class="by">' +
-        Object.keys(by).map(function (k) {
-          return '<li><span>' + esc(k) + '</span><span><b>' + by[k].s + '/' + by[k].n + '</b></span></li>';
-        }).join("") + '</ul>';
-    }
-    var review;
-    if (!wrong.length) {
-      review = '<p>You got every question right.</p>';
-    } else {
-      review = '<div class="revs">' + wrong.map(function (i) {
-        var it = S.items[i];
+    var last = T.i === MODS.length - 1;
+    var move = last ? "Finish the program" : "Move ahead to Module " + MODS[T.i + 1].no;
+    var moveAct = last ? "finish" : "lesson";
+    var moveI = last ? "" : (T.i + 1);
+    var buttons = pass
+      ? '<button class="primary" data-action="' + moveAct + '" data-i="' + moveI + '">' + move + '</button>' +
+        '<button class="secondary" data-action="repeat" data-i="' + T.i + '">Repeat this module</button>'
+      : '<button class="primary" data-action="repeat" data-i="' + T.i + '">Repeat this module</button>' +
+        '<button class="secondary" disabled>' + move + '</button>';
+    var review = "";
+    if (wrong.length) {
+      review = '<h2 class="sec">Questions to review</h2><div class="revs">' + wrong.map(function (k) {
+        var it = T.items[k];
         var right = it.opts.filter(function (o) { return o.ok; })[0].t;
-        return '<article class="rev">' +
-          (S.mode === "mock" ? '<p class="mod">' + esc(it.m) + '</p>' : '') +
-          '<p class="rq">Q' + (i + 1) + '. ' + esc(it.q) + '</p>' +
-          '<p class="you">Your answer: ' + esc(it.opts[S.picks[i]].t) + '</p>' +
+        return '<article class="rev"><p class="rq">' + esc(it.q) + '</p>' +
+          '<p class="you">Your answer: ' + esc(it.opts[T.picks[k]].t) + '</p>' +
           '<p class="ans">Right answer: ' + esc(right) + '</p>' +
           '<p class="why">' + esc(it.e) + '</p></article>';
       }).join("") + '</div>';
     }
     app.innerHTML =
-      '<div class="top"><button class="link" data-action="home">← All tests</button></div>' +
-      '<p class="kicker">' + esc(S.title) + ' result</p>' +
-      '<div class="score"><b>' + sc + '</b><span>out of ' + n + ' · ' + Math.round(pct * 100) + '%</span></div>' +
-      '<p class="verdict">' + v[0] + '</p><p>' + v[1] + '</p>' +
-      '<div class="actions"><button class="primary" data-action="retry">Try again</button>' +
-      '<button class="secondary" data-action="home">All tests</button></div>' +
-      breakdown +
-      '<h2 class="sec">' + (wrong.length ? "Questions to review" : "Review") + '</h2>' + review;
-    window.scrollTo(0, 0);
+      '<div class="top"><button class="link" data-action="home">← All modules</button></div>' +
+      '<p class="kicker">Module ' + m.no + ' result</p>' +
+      '<div class="score"><b>' + Math.round(sc / n * 100) + '%</b><span>' + sc + ' out of ' + n + ' correct</span></div>' +
+      (pass
+        ? '<p class="verdict">Module ' + m.no + ' cleared.</p><p>You scored 100%, so you can move ahead.</p>'
+        : '<p class="verdict">Not 100% yet.</p><p>You need 100% to move ahead. Read the review below, then repeat this module and try again. Every attempt helps.</p>') +
+      '<div class="actions">' + buttons + '</div>' +
+      (pass ? '<p class="note">Next, do the mock interview for this module with your pod or trainer.</p>' : '') +
+      review;
+    up();
   }
 
+  /* ---------- finish ---------- */
+  function finish() {
+    var rows = MODS.map(function (m) {
+      var r = P[m.id] || {};
+      return '<li><span>Module ' + m.no + ': ' + esc(m.title) + '</span><span>' + (r.tries || 0) + (r.tries === 1 ? " attempt" : " attempts") + '</span></li>';
+    }).join("");
+    app.innerHTML =
+      '<div class="top"><button class="link" data-action="home">← All modules</button></div>' +
+      '<p class="eyebrow">Aasha Infinite Foundation</p>' +
+      '<h1>You have cleared all six modules.</h1>' +
+      '<p class="lead">You scored 100% in every module test. Keep practising your JAM, your pod voice notes and your mock interviews.</p>' +
+      '<ul class="list">' + rows + '</ul>' +
+      '<div class="actions"><button class="secondary" data-action="home">Go to the course list</button></div>';
+    up();
+  }
+
+  /* ---------- events ---------- */
   app.addEventListener("click", function (e) {
     var b = e.target.closest("[data-action]");
     if (!b || b.disabled) return;
-    var a = b.dataset.action;
-    if (a === "start") start(b.dataset.id);
-    else if (a === "home") home();
-    else if (a === "retry") start(S.id);
+    var a = b.dataset.action, i = +b.dataset.i;
+    if (a === "home") { confirming = false; home(); }
+    else if (a === "lesson") lesson(i, false);
+    else if (a === "repeat") lesson(i, true);
+    else if (a === "test") startTest(i);
+    else if (a === "finish") finish();
+    else if (a === "reset") { confirming = true; home(); }
+    else if (a === "reset-no") { confirming = false; home(); }
+    else if (a === "reset-yes") { P = {}; saveP(); confirming = false; home(); }
     else if (a === "pick") {
-      S.picks[S.i] = +b.dataset.k;
-      quiz();
-      if (S.mode === "practice") {
-        var nx = app.querySelector('[data-action="next"]');
-        if (nx) { nx.focus({ preventScroll: true }); nx.scrollIntoView({ block: "nearest", behavior: reduce ? "auto" : "smooth" }); }
-      } else {
-        var sel = app.querySelector(".opt.sel");
-        if (sel) sel.focus({ preventScroll: true });
-      }
+      T.picks[T.k] = +b.dataset.k;
+      renderQ();
+      var nx = app.querySelector('[data-action="next"]');
+      if (nx) { nx.focus({ preventScroll: true }); nx.scrollIntoView({ block: "nearest", behavior: reduce ? "auto" : "smooth" }); }
     } else if (a === "next") {
-      if (S.i < S.items.length - 1) { S.i++; quiz(); window.scrollTo(0, 0); }
+      if (T.k < T.items.length - 1) { T.k++; renderQ(); up(); }
       else result();
     }
   });
